@@ -1,34 +1,50 @@
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeComponent } from './home/home.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { IngredientsComponent } from './ingredients/ingredients.component';
+import { CategoriesDetailsComponent } from './categories-details/categories-details.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { MaterialModule } from './shared/material.module';
+import { AccessModule } from './access/access.module';
+import { HandleErrorsInterceptor } from './handle-errors.interceptor';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
-  declarations: [AppComponent, SidenavComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    CategoriesComponent,
+    RecipesComponent,
+    IngredientsComponent,
+    CategoriesDetailsComponent,
+    NotFoundComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatToolbarModule,
+    AccessModule,
+    MaterialModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-bottom-left',
+    }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HandleErrorsInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
