@@ -1,3 +1,12 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .example-form {
   min-width: 150px;
   max-width: 500px;
@@ -6,4 +15,13 @@
 
 .example-full-width {
   width: 100%;
+}
+
+.login-button {
+  margin-right: 1rem;
+}
+
+.login-card-title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

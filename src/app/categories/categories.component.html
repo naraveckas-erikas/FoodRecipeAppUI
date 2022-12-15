@@ -1,3 +1,22 @@
-<h2>categories works!</h2>
-<a routerLink="123">Go to details</a>
+<ng-container *ngFor="let category of categories">
+    <mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{category.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{category.description}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="navigateToCategoryDetails(category.id)"><mat-icon>arrow_forward_ios</mat-icon></button>
+  </mat-card-actions>
+</mat-card>
+</ng-container>
+<button 
+  class="fab-button" 
+  mat-fab 
+  color="primary" 
+  aria-label="Add category button"
+  (click)="openDialog()">
+  <mat-icon>add</mat-icon>
+</button>
 <router-outlet></router-outlet>

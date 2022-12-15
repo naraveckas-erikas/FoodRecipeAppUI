@@ -15,6 +15,10 @@ import { MaterialModule } from './shared/material.module';
 import { AccessModule } from './access/access.module';
 import { HandleErrorsInterceptor } from './handle-errors.interceptor';
 import { ToastrModule } from 'ngx-toastr';
+import { AddCategoryModalComponent } from './add-category-modal/add-category-modal.component';
+import { FormsModule } from '@angular/forms';
+import { AddRecipeModalComponent } from './add-recipe-modal/add-recipe-modal.component';
+import { AddIngredientModalComponent } from './add-ingredient-modal/add-ingredient-modal.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,9 @@ import { ToastrModule } from 'ngx-toastr';
     IngredientsComponent,
     CategoriesDetailsComponent,
     NotFoundComponent,
+    AddCategoryModalComponent,
+    AddRecipeModalComponent,
+    AddIngredientModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +44,7 @@ import { ToastrModule } from 'ngx-toastr';
       timeOut: 5000,
       positionClass: 'toast-bottom-left',
     }),
+    FormsModule,
   ],
   providers: [
     {

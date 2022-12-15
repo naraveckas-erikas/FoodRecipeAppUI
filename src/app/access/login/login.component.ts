@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
         this.responseData = resp;
         if (this.responseData != null) {
           localStorage.setItem('token', this.responseData.accessToken);
-          this.router.navigate(['/']);
+          this.router.navigate(['/categories']);
         }
       });
     }

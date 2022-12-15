@@ -19,12 +19,22 @@ const routes: Routes = [
   {
     path: 'categories',
     component: CategoriesComponent,
-    children: [{ path: ':categoryId', component: CategoriesDetailsComponent }],
+    // children: [{ path: ':categoryId', component: CategoriesDetailsComponent }],
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'categories/:categoryId',
+    component: CategoriesDetailsComponent,
     canActivate: [AuthGuard],
   },
   { path: 'recipes', component: RecipesComponent, canActivate: [AuthGuard] },
   {
     path: 'ingredients',
+    component: IngredientsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'categories/:categoryId/recipes/:recipeId',
     component: IngredientsComponent,
     canActivate: [AuthGuard],
   },

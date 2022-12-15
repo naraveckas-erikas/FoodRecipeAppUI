@@ -1,0 +1,32 @@
+.demo-table {
+  width: 80%;
+  height: 80%;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.demo-button-container {
+  padding-bottom: 16px;
+}
+
+.demo-button + .demo-button {
+  margin-left: 8px;
+}
+
+.fab-button {
+    top: auto !important;
+    right: 30px !important;
+    bottom: 90px !important;
+    left: auto !important;
+    position: fixed !important;
+}
+
+.details-icon {
+  cursor: pointer;
+}

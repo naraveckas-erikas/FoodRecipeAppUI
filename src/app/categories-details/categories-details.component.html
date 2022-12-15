@@ -1,1 +1,67 @@
-<p>Details page of {{routeId}} category</p>
+<div class="flex-container">
+<h2 *ngIf="dataSource.length <= 0">No recipes exist.</h2>
+<table mat-table *ngIf="dataSource.length > 0" [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{element.name}}</td>
+    </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef>Type</th>
+    <td mat-cell *matCellDef="let element">{{element.type}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="originCountry">
+    <th mat-header-cell *matHeaderCellDef>Origin country</th>
+    <td mat-cell *matCellDef="let element">{{element.originCountry}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="timeToPrepare">
+    <th mat-header-cell *matHeaderCellDef>Time to prepare (in minutes)</th>
+    <td mat-cell *matCellDef="let element">{{element.timeToPrepare}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="portionCount">
+    <th mat-header-cell *matHeaderCellDef>Portions count</th>
+    <td mat-cell *matCellDef="let element">{{element.portionsCount}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="isVegetarian">
+    <th mat-header-cell *matHeaderCellDef>Vegeratian</th>
+    <td mat-cell *matCellDef="let element">{{element.isVegetarian ? 'Yes' : 'No'}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="isVegan">
+    <th mat-header-cell *matHeaderCellDef>Vegan</th>
+    <td mat-cell *matCellDef="let element">{{element.isVegan ? 'Yes' : 'No'}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+  <th mat-header-cell *matHeaderCellDef> Details </th>   
+  <td mat-cell *matCellDef="let element"> 
+    <mat-icon class="details-icon" (click)="navigateToIngredientsPage(categoryId, element.id)">arrow_forward_ios</mat-icon> 
+  </td>
+</ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
+
+<div *ngIf="isLoading" 
+   style="display: flex; justify-content: center; align-items: center; background: white;">
+  <mat-progress-spinner 
+    color="primary" 
+    mode="indeterminate">
+  </mat-progress-spinner>
+</div>
+
+<button 
+  class="fab-button" 
+  mat-fab 
+  color="primary" 
+  aria-label="Add category button"
+  (click)="openDialog()"
+>
+  <mat-icon>add</mat-icon>
+</button>

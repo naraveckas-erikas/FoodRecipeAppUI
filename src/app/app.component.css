@@ -1,4 +1,22 @@
-@import 'ngx-toastr/toastr';
+:host {
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  /* border: solid 3px yellow; */
+  justify-content: center;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 .example-spacer {
   flex: 1 1 auto;
@@ -12,4 +30,24 @@ a {
 
 #toast-container > div {
     opacity:1;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 64px;
+  background-color: #212121;
+  color: white;
+  text-align: center;
+}
+
+a, a:visited, a:hover {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.toolbar {
+  width: 100%;
 }

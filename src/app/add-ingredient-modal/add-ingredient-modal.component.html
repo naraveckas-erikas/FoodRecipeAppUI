@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Add new ingredient</h1>
+<div mat-dialog-content class="inputs">
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Type</mat-label>
+    <input matInput [(ngModel)]="data.type">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Is vegetarian?</mat-label>
+        <mat-select matNativeControl required [(ngModel)]="data.isVegetarian">
+            <mat-option value="true">Yes</mat-option>
+            <mat-option value="false">No</mat-option>
+        </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Is vegan?</mat-label>
+        <mat-select matNativeControl required [(ngModel)]="data.isVegan">
+            <mat-option value="true">Yes</mat-option>
+            <mat-option value="false">No</mat-option>
+        </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button>Close</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Add</button>
+</div>

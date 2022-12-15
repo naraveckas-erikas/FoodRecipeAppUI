@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  /* height: 85vh; */
+}
+
+.example-card {
+  max-width: 400px;
+  margin: 2%;
+  height: 110px;
+  width: 275px;
+}
+
+.example-button {
+  align-self: flex-end;
+  justify-self: flex-end;
+  /* justify-content: center; */
+  /* width: 120px; */
+  margin-top: 100px;
+}
+
+.fab-flex-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items:baseline;
+  height: 80vh;
+}
+
+.fab-button {
+    top: auto !important;
+    right: 30px !important;
+    bottom: 90px !important;
+    left: auto !important;
+    position: fixed !important;
+}

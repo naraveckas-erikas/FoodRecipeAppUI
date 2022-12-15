@@ -15,7 +15,7 @@ export class HandleErrorService {
     } else {
       switch (err.status) {
         case 400:
-          errorMessage = `Username or password is incorrect`;
+          errorMessage = `Bad request`;
           break;
         default:
           errorMessage = `Something went wrong`;

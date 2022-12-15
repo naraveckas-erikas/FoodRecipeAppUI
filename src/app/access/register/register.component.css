@@ -1,3 +1,25 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .example-full-width {
   width: 100%;
+}
+
+.buttons-row {
+  display: flex;
+}
+
+.register-button {
+  margin-right: 1rem;
+}
+
+.register-card-title {
+  /* margin-top: 1rem; */
+  margin-bottom: 1rem;
 }
